@@ -20,6 +20,12 @@ public class KiwiPage {
     @FindBy (xpath = "//*[@content-desc='Clear All']")
     public WebElement sehirSecmeCarpiButonu;
 
+    @FindBy(className = "android.widget.Button")
+    public WebElement searchButton;
+
+    @FindBy(xpath = "(//*[@class='android.widget.TextView'])[12]")
+    public WebElement fiyatText;
+
 
 
 

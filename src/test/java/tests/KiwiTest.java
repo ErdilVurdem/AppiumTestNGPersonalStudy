@@ -35,7 +35,8 @@ public class KiwiTest {
             ReusableMethods.koordinatTiklamaMethodu(500,1700);
         }
 // Trip type,one way olarak secilir
-    kiwiPage.oneWayReturnButton.click();
+    //kiwiPage.oneWayReturnButton.click();
+        texteTiklamaMethodu("Return");
         Thread.sleep(1000);
 // kalkis ulkesi secenegine tiklanir ve default olan ulke kaldirilir
     texteTiklamaMethodu("One way");
@@ -74,12 +75,27 @@ public class KiwiTest {
             Thread.sleep(1000);
         }
 
+        koordinatTiklamaMethodu(970,830);
+        Thread.sleep(1000);
+        texteTiklamaMethodu("Set date");
+        Thread.sleep(1000);
 
+        // search butonuna tiklanir
+        //kiwiPage.searchButton.click();
+        koordinatTiklamaMethodu(550,1200);
 
-        //texteTiklamaMethodu("Set date");
-// search butonuna tiklanir
-// en  ucuz ve aktarmasiz filtrelemeleri yapilir
-// gelen bilet fiyati kaydedilir ve kullanicin telefonuna sms olarak gonderilir
+        // en  ucuz ve aktarmasiz filtrelemeleri yapilir
+        texteTiklamaMethodu("Best");
+        texteTiklamaMethodu("Cheapest");
+        Thread.sleep(1000);
+        texteTiklamaMethodu("Stops");
+        texteTiklamaMethodu("Nonstop");
+        Thread.sleep(1000);
+
+        // gelen bilet fiyati kaydedilir ve kullanicin telefonuna sms olarak gonderilir
+        String biletFiyati=kiwiPage.fiyatText.getText();
+        driver.sendSMS("+90888888888","Bulunan en ucuz bilet fiyatı "+biletFiyati);
+
     }
 
 
